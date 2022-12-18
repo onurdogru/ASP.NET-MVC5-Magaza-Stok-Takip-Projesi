@@ -1,0 +1,50 @@
+﻿
+@{
+    Layout = null;
+}
+
+@*2.ADIM : https://www.w3schools.com/bootstrap/bootstrap_navbar.asp sitesinden kopyaladığımız yapı aşağıdadır.*@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">MVC Stok</a>
+            </div>
+            <ul class="nav navbar-nav">
+                @*5.ADIM : Kendi web sitemize göre burayı değiştiririz.*@
+                <li><a href="#">Ürünler</a></li>
+                <li><a href="#">Müşteriler</a></li>
+                <li><a href="#">Kategoriler</a></li>
+                <li><a href="#">Satışlar</a></li>
+                <li><a href="#">Yardım</a></li>
+                <li><a href="#">Ayarlar</a></li>
+                <li><a href="#">Çıkış</a></li>
+
+            </ul>
+        </div>
+    </nav>
+
+    @*3.ADIM : Bu container kısmı bizim RenderBody alanımız olur*@
+
+    <div class="container">
+        @RenderBody()
+
+
+        @*<h3>Basic Navbar Example</h3>
+        <p>A navigation bar is a navigation header that is placed at the top of the page.</p>*@
+    </div>
+
+</body>
+</html>
