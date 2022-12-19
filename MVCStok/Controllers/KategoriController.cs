@@ -24,5 +24,55 @@ namespace MVCStok.Controllers
             var kategoriler = db.tblkategori.ToList();
             return View(kategoriler);
         }
+
+        //9.ADIM - Yeni kategori eklememiz için, yeni action resultlar yazmamız gereklidir.
+        //Ek olarakda Add view deriz YeniKategoriye.
+        [HttpGet] //sayfa yüklendiğinde çalışsın
+        public ActionResult YeniKategori()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult YeniKategori(tblkategori p) //tbl kategori için p adında bir nesne türetmiş olduk.
+        {
+            db.tblkategori.Add(p);
+            db.SaveChanges();
+            return RedirectToAction("Index"); //bunu yazmamızın nedenide kategori ekledikten sonra, hangi sayfaya
+            //dönmesini istememizdir.
+
+        }
+
+
+
+        //10.ADIM Kategori Silme İşlemi
+        public ActionResult KategoriSil(int id)
+        {
+           var ktg = db.tblkategori.Find(id);
+            db.tblkategori.Remove(ktg);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+
+
+        //11.ADIM Kategori Güncelleme/Getirme
+        public ActionResult KategoriGetir(int id)
+        {
+            var ktgr = db.tblkategori.Find(id);
+            return View("KategoriGetir", ktgr);
+        }
+
+
+
+        //12.ADIM Kategori Güncelleme
+        public ActionResult KategoriGuncelle(tblkategori k)
+        {
+            var ktg = db.tblkategori.Find(k.id);
+            ktg.ad = k.ad;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+
     }
 }

@@ -1,11 +1,15 @@
-﻿
+﻿@*8.ADIM SQL verilerini kullanmak için yazarız.*@
+
+@using MVCStok.Models.Entity
+@model List<tblkategori>
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 @*Yukarıdaki alan, layoutun yüklü olduğu alan anlamına gelir*@
 
-@*4. ADIMı ALAN SONUCU OLUŞAN ALAN*@
+@*4. ADIMek ALAN SONUCU OLUŞAN ALAN*@
 
 <h2>Index</h2>
 
@@ -19,4 +23,24 @@
         <th>GÜNCELLE</th>
     </tr>
 
+    @*8.ADIMek*@
+
+    @foreach (var x in Model)
+            {
+                    
+                <tr>
+                    <td>@x.id</td>
+                    <td>@x.ad</td>
+                    @*//10.Adım revize işlemi.*@
+                    <td><a href="/Kategori/KategoriSil/@x.id" class="btn btn-danger">Sil</a></td> @*Bu satırda yazan uzantı aslında action result*@
+                   @*11.Adım revize işlemi*@
+                    <td><a href="/Kategori/KategoriGetir/@x.id" class="btn btn-success">Güncelle</a></td>
+                </tr>
+            }
+
 </table>
+@*<a href="#" class="btn btn-primary">Yeni Kategori</a>*@
+@*Revize edilmiş hali ise ;*@
+@*9.ADIMek aşağıdadır*@
+
+<a href="/Kategori/YeniKategori" class="btn btn-primary">Yeni Kategori</a>

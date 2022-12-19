@@ -8,7 +8,7 @@ namespace MVCStok.Controllers
 {
     public class DefaultController : Controller
     {
-        //1.ADIM : Defalt Controller açarız.
+        //1.ADIM : Defalt Controller açarız. (Index Controller)
 
         // GET: Default
         public ActionResult Index()

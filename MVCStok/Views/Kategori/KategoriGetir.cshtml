@@ -1,0 +1,36 @@
+﻿@*11.ADIMek2*@
+@model MVCStok.Models.Entity.tblkategori
+
+
+@{
+    ViewBag.Title = "KategoriGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Kategori Güncelleme</h2>
+
+@*11.ADIMek - yenikategori viewdeki kodlarıda kopyalayabiliriz.*@
+@*Yalnız textboxfor şeklinde yazarsak daha iyi olur, yazıyı da görürüz böylelikle.*@
+
+<br />
+
+@using (Html.BeginForm("KategoriGuncelle", "Kategori", FormMethod.Post))
+{
+    @*<form method="post">*@
+    @*<label>Kategori Adını Giriniz...</label>*@
+    @*<input type="text" class="form-control" name="ad" placeholder="kategori adı" />*@
+
+    @Html.TextBoxFor(x => x.id, new { @class = "form-control" })
+
+    @*yada üstteki komutu IDyi visible şekilde görmek istersek bu şekildede yazabiliriz;
+    @Html.HiddenFor(x => x.id, new { @class = "form-control" })*@
+
+    @Html.TextBoxFor(x => x.ad, new { @class = "form-control" })
+
+    <br />
+    <button class="btn btn-warning">Güncelle</button>
+    @*</form>*@
+
+
+
+}
