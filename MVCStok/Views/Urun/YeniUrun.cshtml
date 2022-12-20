@@ -1,0 +1,45 @@
+﻿@model MVCStok.Models.Entity.tblurunler
+@{
+    ViewBag.Title = "YeniUrun";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@*14.Adımek-aşağıdaki bölümü yenikategoricshtml'den alabiliriz'*@
+<br />
+<form method="post">
+    <label>Ürün Adı</label>
+    @*<input type="text" class="form-control" name="ad" placeholder="kategori adı" />*@
+    @Html.TextBoxFor(x => x.ad, new { @class = "from-control" })
+
+    <br />
+    <label>Marka Adı</label>
+    @Html.TextBoxFor(x => x.marka, new { @class = "from-control" })
+
+    <br />
+
+    <label>Stok Adı</label>
+    @Html.TextBoxFor(x => x.stok, new { @class = "from-control" })
+
+    <br />
+
+    <label>Alış Fiyat Adı</label>
+    @Html.TextBoxFor(x => x.alisfiyat, new { @class = "from-control" })
+
+    <br />
+
+    <label>Satış Fiyat Adı</label>
+    @Html.TextBoxFor(x => x.satisfiyat, new { @class = "from-control" })
+
+    <br />
+
+
+    <label>Kategori Adı</label>
+    @*@Html.TextBoxFor(x => x.kategori, new { @class = "from-control" })*@
+    @*15.Adımdevam*@
+    @Html.DropDownListFor(x=>x.tblkategori.id, (List<SelectListItem>) ViewBag.drop, new {@class="form-control"})
+
+    <br />
+
+    <button class="btn btn-info">Kaydet</button>
+</form>
+
