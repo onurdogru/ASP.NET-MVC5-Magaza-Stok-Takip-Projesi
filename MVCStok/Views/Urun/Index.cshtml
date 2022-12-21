@@ -21,7 +21,7 @@
         <th>STOK</th>
         <th>ALIŞ FİYAT</th>
         <th>SATIŞ FİYAT</th>
-        <th>KATEGORİ</th>
+        @*<th>KATEGORİ</th>*@  @*????*@
         <th>SİL</th>
         <th>GÜNCELLE</th>
     </tr>
@@ -39,10 +39,11 @@
             <td>@x.stok</td>
             <td>@x.alisfiyat</td>
             <td>@x.satisfiyat</td>
-            <td>@x.tblkategori.ad</td>
+            @*<td>@x.tblkategori.id</td>*@  @*????*@
 
-            <td><a href="/Kategori/KategoriSil/@x.id" class="btn btn-danger">Sil</a></td>
-            <td><a href="/Kategori/KategoriGetir/@x.id" class="btn btn-success">Güncelle</a></td>
+            @*17.Adımek*@
+            <td><a href="/Urun/UrunSil/@x.id" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Urun/UrunGetir/@x.id" class="btn btn-success">Güncelle</a></td>
         </tr>
     }
 
