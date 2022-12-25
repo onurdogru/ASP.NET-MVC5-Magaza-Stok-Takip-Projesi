@@ -15,12 +15,19 @@ namespace MVCStok.Controllers
         DbMvcStokEntities db = new DbMvcStokEntities();
         //13.ADIMek index sayfasına add view deriz.
 
-        public ActionResult Index()
+        public ActionResult Index(string p)
         {
             //21.ADIMstart : tolisti revize ederiz
             //var urunler = db.tblurunler.ToList();
-            var urunler = db.tblurunler.Where(x=>x.durum==true).ToList();
-            return View(urunler);
+            // var urunler = db.tblurunler.Where(x=>x.durum==true).ToList();
+
+            //36.ADIM start //yukarıdaki 21.adımın satırlarını sileriz/revize ederiz.
+            var urunler = db.tblurunler.Where(x => x.durum == true);
+            if (!string.IsNullOrEmpty(p))
+            {
+                urunler = urunler.Where(x => x.ad.Contains(p) && x.durum == true);
+            }
+            return View(urunler.ToList());
         }
 
         //14.ADIM : Yeni Ürün Ekleme

@@ -30,5 +30,6 @@ namespace MVCStok.Models.Entity
         public virtual DbSet<tblpersonel> tblpersonel { get; set; }
         public virtual DbSet<tblsatislar> tblsatislar { get; set; }
         public virtual DbSet<tblurunler> tblurunler { get; set; }
+        public virtual DbSet<tbladmin> tbladmin { get; set; }
     }
 }

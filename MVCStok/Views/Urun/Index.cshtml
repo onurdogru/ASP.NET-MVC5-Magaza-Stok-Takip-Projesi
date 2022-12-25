@@ -7,6 +7,14 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+@*36.ADIMdevam*@
+@using(Html.BeginForm("Index", "Urun", FormMethod.Get))
+            {
+    <p>
+        Ürün Adı : @Html.TextBox("p");
+        <input type="submit" value="Ara" />
+    </p>
+            }
 
 <h2>Ürünlerin Index</h2>
 @*13.ADIMek aşağıdaki table yapısıdır.*@

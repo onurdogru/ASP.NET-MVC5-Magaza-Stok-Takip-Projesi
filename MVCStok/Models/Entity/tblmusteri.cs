@@ -11,8 +11,7 @@ namespace MVCStok.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class tblmusteri
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,14 +19,10 @@ namespace MVCStok.Models.Entity
         {
             this.tblsatislar = new HashSet<tblsatislar>();
         }
-    //29.Adým Requiredler
+    
         public int id { get; set; }
-        [Required(ErrorMessage = "Ad Alanýný Boþ Geçmeyiniz...")]
-        [StringLength(30, ErrorMessage = "Bu alan 30 karakterden büyük olamaz")] //ek olarak
         public string ad { get; set; }
-        [Required(ErrorMessage = "Soyad Alanýný Boþ Geçmeyiniz...")]
         public string soyad { get; set; }
-        
         public string sehir { get; set; }
         public Nullable<decimal> bakiye { get; set; }
         public Nullable<bool> durum { get; set; }

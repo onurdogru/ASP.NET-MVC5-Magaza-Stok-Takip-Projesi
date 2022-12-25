@@ -16,6 +16,9 @@ namespace MVCStok.Controllers
 
         // GET: Musteri 22.ADIMdevam
         DbMvcStokEntities db = new DbMvcStokEntities();
+
+        //deneme[Authorize]
+
         public ActionResult Index(int sayfa=1) //sayfalama işleminin kaçtan başlıcağını belirtir
         {
             //var musteriliste = db.tblmusteri.ToList(); //23.Adım pagedlist ile ilgili
